@@ -1,0 +1,19 @@
+meta {
+  name: Excluir com tipo invalido
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/pets/1?tipo=xyz
+  body: none
+  auth: none
+}
+
+params:query {
+  tipo: xyz
+}
+
+assert {
+  res.status: eq 400
+}

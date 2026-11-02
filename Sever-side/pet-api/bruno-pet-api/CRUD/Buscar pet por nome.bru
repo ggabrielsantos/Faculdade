@@ -1,0 +1,19 @@
+meta {
+  name: Buscar pet por nome
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/pets/busca?nome=rex
+  body: none
+  auth: none
+}
+
+params:query {
+  nome: rex
+}
+
+assert {
+  res.status: eq 200
+}

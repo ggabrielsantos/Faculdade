@@ -1,0 +1,26 @@
+meta {
+  name: Atualizar pet
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/pets/{{codigo}}
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome_pet": "Rex II",
+    "genero_pet": "M"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

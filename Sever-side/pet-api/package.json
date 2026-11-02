@@ -1,0 +1,13 @@
+{
+  "name": "pet-api",
+  "version": "1.0.0",
+  "description": "API REST de pets (CRUD, busca por nome e exclusão lógica ou definitiva)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "mysql2": "^3.11.0"
+  }
+}

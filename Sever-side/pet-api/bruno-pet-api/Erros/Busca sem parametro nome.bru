@@ -1,0 +1,15 @@
+meta {
+  name: Busca sem parametro nome
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/pets/busca
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 400
+}

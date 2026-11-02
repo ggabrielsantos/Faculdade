@@ -1,0 +1,19 @@
+meta {
+  name: Excluir pet definitivamente
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/pets/{{codigo}}?tipo=definitiva
+  body: none
+  auth: none
+}
+
+params:query {
+  tipo: definitiva
+}
+
+assert {
+  res.status: eq 200
+}

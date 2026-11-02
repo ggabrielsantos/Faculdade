@@ -1,0 +1,15 @@
+meta {
+  name: Buscar pet inexistente
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/pets/999999
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 404
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Criar pet com genero invalido
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/pets
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome_pet": "Rex",
+    "genero_pet": "X"
+  }
+}
+
+assert {
+  res.status: eq 400
+}

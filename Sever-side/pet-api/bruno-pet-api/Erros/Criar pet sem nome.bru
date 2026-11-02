@@ -1,0 +1,26 @@
+meta {
+  name: Criar pet sem nome
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/pets
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome_pet": "  ",
+    "genero_pet": "M"
+  }
+}
+
+assert {
+  res.status: eq 400
+}
